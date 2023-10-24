@@ -1,0 +1,319 @@
+
+<html>
+<head>
+    <title>Bookstore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="background-radial-gradient ">
+
+    <style>
+
+* {
+	box-sizing: border-box;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.85em;
+}
+
+.main-nav {
+	margin-top: 5px;
+	overflow: hidden;
+
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+	position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+
+/* =================================
+  Media Queries
+==================================== */
+
+
+
+
+@media (min-width: 769px) {
+	.header,
+	.main-nav {
+		display: flex;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+    	.header{
+		width: 80%;
+		margin: 0 auto;
+		max-width: 1150px;
+	}
+	}
+
+}
+
+@media (min-width: 1025px) {
+	.header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}
+
+
+
+
+
+         .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+          height:auto;
+    }
+        .btn{
+        color:#566d95
+        }
+
+
+img{
+ border-radius:9px;
+ }
+
+
+.book-link{
+   transition: transform .2s;
+   }
+
+.book-link:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.07);
+}
+
+      .btn{
+   transition: transform .2s;
+   }
+
+.btn:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.07);
+}
+
+
+
+    </style>
+
+<section>
+
+
+
+<!-- ----------------------------------navbar------------------------------------------------>
+
+
+
+    <header class="header">
+ 		<h1 class="logo"><a>Bookstore, {{user}}</a></h1>
+      <ul class="main-nav">
+
+         <li><a href="editprofileview"><img width="30" height="30" src="https://img.icons8.com/fluency/48/edit-user-male.png" alt="edit-user-male"/> Edit Profile</a></li>&nbsp &nbsp &nbsp
+         <li><a href="passview"><img width="30" height="30" src="https://img.icons8.com/fluency/30/edit-text-file.png" alt="edit-text-file"/> Change Password </a></li>&nbsp &nbsp &nbsp
+         <li><a href="signout">Signout <img width="30" height="30" src="https://img.icons8.com/cute-clipart/30/000000/exit.png" alt="exit"/></a></li>
+
+
+      </ul>
+	</header>
+
+
+
+<!---------------------------------------book details table--------------------------------------------------------------------->
+
+
+
+
+<div class="container">
+ <br><br><br><br><br><br><br>
+  <input class="form-control" id="myInput" type="text" placeholder="Search Book by Name , Author or Genre"  style="width:300px; margin-left:440px;">
+  <br>
+<ul class="main-nav" style="margin-left:955px;margin-top:0px;margin-bottom:10px;border-radius:5px">
+     <button type="button" class="btn "><a style="color:#f4f4f4" href="userrenthistoryview">RENT HISTORY <img width="32" height="32" src="https://img.icons8.com/external-anggara-filled-outline-anggara-putra/32/external-history-multimedia-anggara-filled-outline-anggara-putra.png" alt="external-history-multimedia-anggara-filled-outline-anggara-putra"/></a></button>
+      </ul>
+  <table class="table table-bordered" style="text-align:center;color:#566d95;">
+    <thead>
+      <tr>
+
+        <th>Book Detail</th>
+        <th>Book</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+        {% for book in data %}
+      <tr>
+        <td data-toggle="modal" data-target="#exampleModalCenter" style="cursor:pointer">
+        <img class="book-link" data-toggle="modal" data-target="#bookModal" data-book-id="{{ book.description }}" style="width:100px;height:130px;" src="{{book.bookcover.url}}">
+        </td>
+
+        <td>{{book.bookname}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.genre}}</td>
+        <td>
+        <button type="button" class="btn " data-toggle="tooltip" data-placement="bottom" title="Preview"><a href="{{book.booklink}}"><img width="35" height="35" src="https://img.icons8.com/3d-fluency/40/reading.png" alt="reading"/></a></button>
+        <button type="button" class="btn " data-toggle="tooltip" data-placement="bottom" title="Buy"><a href="{{book.buylink}}"><img width="35" height="35" src="https://img.icons8.com/3d-fluency/40/shopping-cart.png" alt="reading"/></a></button>
+
+
+            <form action="getbook" method="post">
+                {% csrf_token %}
+            <input type="hidden" value="{{book.id}}" name=bookid >
+        <button type="submit" class="btn" data-toggle="tooltip" data-placement="bottom" title="Rent"><img width="35" height="35" src="https://img.icons8.com/color/30/borrow-book.png" alt="borrow-book"/></button>
+        </form>
+
+            
+        </td>
+
+      </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+<!------------------------------------------- Modal ------------------------------------------------------------->
+
+
+
+
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="bookModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookModalLabel">Book Description</h5>
+            </div>
+            <div class="modal-body">
+                <p id="bookDescription"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+ // Get all elements with the class 'book-link'
+  var bookLinks = document.querySelectorAll('.book-link');
+
+  // Iterate through each link and add a click event listener
+  bookLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      // Prevent the default behavior of the link
+      event.preventDefault();
+
+      // Get the 'data-book-id' attribute value from the clicked link
+      var bookId = link.getAttribute('data-book-id');
+
+      // Update the content of the modal with the bookId
+      document.getElementById('bookDescription').textContent = bookId;
+    });
+  });
+
+
+
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</section>
+</body>
+</html>

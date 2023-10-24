@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'librarian.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+
+</head>
+<body>
+
+{% block content %}
+ <style>
+
+        .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+      width:350px;
+      border-radius:15px;
+      margin-top:20px;
+      margin-left:400px;
+    }
+
+     .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+          height:auto;
+    }
+
+
+    </style>
+
+ <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form action="addbook" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
+
+                <br>
+                <br>
+
+              <!-- Username input -->
+
+
+
+              <div class="form-outline mb-4">
+                <input type="text" id="form3Example5" name="bookname" class="form-control" placeholder="Book Name" required="" style="text-transform: capitalize;" />
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="text" id="form3Example4" name="author" class="form-control" placeholder="Author Name" required="" style="text-transform: capitalize;" />
+              </div>
+
+                <div class="form-outline mb-4">
+                <input type="text" id="form3Example6" name="genre" class="form-control"  placeholder="Genre Type" required="" style="text-transform: capitalize;" />
+              </div>
+
+                <div class="form-outline mb-4">
+                    <textarea  id="form3Example16" name="description" class="form-control"  placeholder="Description" required="" style="text-transform: capitalize;" ></textarea>
+              </div>
+
+
+
+                 <div class="form-outline mb-4">
+                     <input type="file" name="bookcover" class="form-control" required="">
+              </div>
+
+                <div class="form-outline mb-4">
+                     <input type="url" name="booklink" class="form-control" placeholder="Pdf Link here" required="">
+              </div>
+
+
+                <div class="form-outline mb-4">
+                     <input type="url" name="buylink" class="form-control" placeholder="Buy Link here" required="">
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+                <br>
+
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Add Book to Library
+              </button>
+              <br>
+                <ul class="main-nav">
+                <li><a href="librarian">Go Back</a></li>
+                </ul>
+            </form>
+          </div>
+        </div>
+{% endblock %}
+</body>
+</html>
